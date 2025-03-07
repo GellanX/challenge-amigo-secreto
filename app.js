@@ -9,9 +9,21 @@ function agregarAmigo() {
     //Si el valor no es vacio, se agrega a la lista
     if (nombre !== "") {
         nombrePersonas.push(nombre);
-        console.log(`Se agregó el nombre ${nombre}`);
+        mostrarAmigos();
         document.getElementById("amigo").value = "";
     } else {
         alert("Por favor, ingresa un nombre.");
+    }
+}
+
+//Función para mostrar los amigos agregados
+function mostrarAmigos() {
+    let listaNombres = document.getElementById("listaAmigos");
+    listaNombres.innerHTML = "";
+
+    for (let i = 0; i < nombrePersonas.length; i++) {
+        let item = document.createElement("li");
+        item.textContent = nombrePersonas[i];
+        listaNombres.appendChild(item);
     }
 }
