@@ -9,6 +9,7 @@ function agregarAmigo() {
     //Si el valor no es vacio, se agrega a la lista
     if (nombre !== "") {
         nombrePersonas.push(nombre);
+        console.log(`Se agregó el nombre ${nombre}`);
         document.getElementById("amigo").value = "";
     } else {
         alert("Por favor, ingresa un nombre.");
